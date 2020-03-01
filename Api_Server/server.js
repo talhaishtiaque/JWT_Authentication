@@ -21,7 +21,9 @@ const db = require("./app/models");
 const Item = db.item;
 
 db.sequelize.sync();
+//Database Migrations. 
 // force: true will drop the table if it already exists
+//comment this after  running first time.
 db.sequelize.sync({force: true}).then(() => {
   console.log('Drop and Resync Database with { force: true }');
   initial();
